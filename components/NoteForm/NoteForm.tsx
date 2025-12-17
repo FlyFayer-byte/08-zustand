@@ -36,7 +36,7 @@ export default function NoteForm({onSuccess}:NoteFormProps) {
   const router = useRouter();
   const { draft, saveDraft, clearDraft } = useNoteDraft();
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: createNote,
     onSuccess: () => {
       queryClient.invalidateQueries({
@@ -127,7 +127,7 @@ export default function NoteForm({onSuccess}:NoteFormProps) {
         <button
           type="submit"
           className={css.submitButton}
-          // disabled={isSubmitting}
+          disabled={isPending}
         >
           {/* {isSubmitting ? 'Creating...' : 'Create'} */}
           Create note
