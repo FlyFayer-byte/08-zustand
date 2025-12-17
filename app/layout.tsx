@@ -1,5 +1,6 @@
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import './globals.css';
-import '@/app/notes/filter/[...slug]/NotesPage.module.css'
+import '@/app/notes/filter/[...slug]/NotesPage.module.css';
 // import type { Metadata } from 'next';
 // import { Geist, Geist_Mono } from 'next/font/google';
 
@@ -45,29 +46,24 @@ export const metadata = {
   },
 };
 
-
 interface RootLayoutProps {
   children: React.ReactNode;
   modal: React.ReactNode;
 }
 
-export default function RootLayout({
-  children,
-  modal,
-}: RootLayoutProps) {
+export default function RootLayout({ children, modal }: RootLayoutProps) {
   return (
     // console.log(`1. app/layout.tsx - function RootLayout return <html> => <body>`),
-    (
-      <html lang="en">
-        <body className={`${roboto.variable}`}>
-          <TanStackProvider>
-            <Header />
-            {children}
-            <Footer />
-            {modal}
-          </TanStackProvider>
-        </body>
-      </html>
-    )
+    <html lang="en">
+      <body className={`${roboto.variable}`}>
+        <TanStackProvider>
+          <Header />
+          {children}
+          <Footer />
+          {modal}
+          <ReactQueryDevtools initialIsOpen={false}/>
+        </TanStackProvider>
+      </body>
+    </html>
   );
 }
