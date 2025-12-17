@@ -17,3 +17,11 @@ export type NoteTag =
   | "Shopping";
 
 export type AddNote = Omit<Note, 'id'| 'createdAt' | 'updatedAt'>;
+
+
+export type MetadataProps = {
+  params: {
+    id: string;
+    slug?: string[];
+  };
+};
