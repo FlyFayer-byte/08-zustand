@@ -1,7 +1,7 @@
 import css from './Home.module.css';
 
 export default function Home() {
-console.log(`4. app/page.tsx - function 'Home' return <main>`);
+// console.log(`4. app/page.tsx - function 'Home' return <main>`);
   return (
     <main className={css.main}>
       <div className={css.container}>

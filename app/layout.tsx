@@ -56,7 +56,7 @@ export default function RootLayout({
   modal,
 }: RootLayoutProps) {
   return (
-    console.log(`1. app/layout.tsx - function RootLayout return <html> => <body>`),
+    // console.log(`1. app/layout.tsx - function RootLayout return <html> => <body>`),
     (
       <html lang="en">
         <body className={`${roboto.variable}`}>

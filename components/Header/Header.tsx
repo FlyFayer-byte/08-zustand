@@ -4,7 +4,7 @@ import css from './Header.module.css';
 
 export default function Header() {
   return (
-    console.log(`2. components/Header/Header.tsx - function 'Header' return <header>`),
+    // console.log(`2. components/Header/Header.tsx - function 'Header' return <header>`),
     (
       <header className={css.header}>
         <Link className={css.headerLink} href="/" aria-label="Home">
