@@ -13,6 +13,7 @@ import NoteForm from '@/components/NoteForm/NoteForm';
 // import { useRouter } from 'next/navigation';
 import { fetchNotes } from '@/lib/api';
 import css from './NotesPage.module.css';
+import Link from 'next/link';
 // import { normalize } from 'path';
 
 interface Props {
@@ -70,9 +71,9 @@ export default function NotesClient({ tag }: Props) {
               setPage(1);
             }}
           />
-          <button className={css.button} onClick={() => setIsOpen(true)}>
+          <Link className={css.button} href='/notes/action/create'>
             Create note +
-          </button>
+          </Link>
         </header>
 
         {isError && <p style={{ color: 'red' }}>❌ Failed to load notes</p>}

@@ -1,12 +1,4 @@
-// Доступні типи тегів нотаток (строго фіксований набір значень)
-export type NoteTag =
-  | "Todo"
-  | "Work"
-  | "Personal"
-  | "Meeting"
-  | "Shopping";
-
-// Структура однієї нотатки з API
+// -- Інтерфейс для типізації однієї нотатки з API --
 export interface Note {
   id: string;
   title: string;
@@ -15,3 +7,13 @@ export interface Note {
   createdAt: string; // дата у форматі ISO
   updatedAt: string; // дата у форматі ISO
 }
+
+// Доступні типи тегів нотаток (строго фіксований набір значень)
+export type NoteTag =
+  | "Todo"
+  | "Work"
+  | "Personal"
+  | "Meeting"
+  | "Shopping";
+
+export type AddNote = Omit<Note, 'id'| 'createdAt' | 'updatedAt'>;

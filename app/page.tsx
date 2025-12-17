@@ -1,6 +1,7 @@
-import css from './page.module.css';
+import css from './Home.module.css';
 
-function HomePage() {
+export default function Home() {
+console.log(`4. app/page.tsx - function 'Home' return <main>`);
   return (
     <main className={css.main}>
       <div className={css.container}>
@@ -19,5 +20,3 @@ function HomePage() {
     </main>
   );
 }
-
-export default HomePage;
