@@ -44,7 +44,7 @@ export default function NoteForm({onSuccess}:NoteFormProps) {
       });
       clearDraft();
       onSuccess?.();
-      // router.push('/notes/filter/all');
+      router.push('/notes/filter/all');
     },
   });
 
