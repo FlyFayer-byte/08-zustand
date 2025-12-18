@@ -1,11 +1,11 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 import { fetchNotes } from '@/lib/api';
 import NotesClient from './Notes.client';
-// import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 
 import type { MetadataProps } from '@/types/note';
 
-export async function generateMetadata({ params }:MetadataProps) {
+export async function generateMetadata({ params }:MetadataProps): Promise<Metadata> {
   const filter = params.slug?.[0] ?? 'all';
 
   const formattedFilter = filter.charAt(0).toUpperCase() + filter.slice(1);

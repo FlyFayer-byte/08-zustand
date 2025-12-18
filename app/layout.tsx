@@ -1,7 +1,7 @@
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import './globals.css';
 import '@/app/notes/filter/[...slug]/NotesPage.module.css';
-// import type { Metadata } from 'next';
+import { Metadata } from 'next';
 // import { Geist, Geist_Mono } from 'next/font/google';
 
 import Header from '@/components/Header/Header';
@@ -26,7 +26,7 @@ const roboto = Roboto({
   display: 'swap',
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'NoteHub — Smart Notes Application',
   description:
     'NoteHub is a modern note-taking application built with Next.js. Create, organize, filter, and manage your notes efficiently.',

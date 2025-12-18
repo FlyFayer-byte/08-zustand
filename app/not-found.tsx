@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import css from './not-found.module.css';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'NoteHub — Smart Notes Application',
   description:
     'NoteHub is a modern note-taking application built with Next.js. Create, organize, filter, and manage your notes efficiently.',
