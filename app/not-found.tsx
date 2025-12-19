@@ -3,14 +3,12 @@ import css from './not-found.module.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'NoteHub — Smart Notes Application',
-  description:
-    'NoteHub is a modern note-taking application built with Next.js. Create, organize, filter, and manage your notes efficiently.',
+  title: 'Not Found | Сторінку не знайдено',
+  description: 'Error 404 | Сторінки не існує або вона була видалена.',
   openGraph: {
-    title: 'NoteHub — Smart Notes Application',
-    description:
-      'Create, organize, and manage your notes easily with NoteHub — a modern note-taking app built with Next.js.',
-    url: 'https://08-zustand-beta-brown.vercel.app',
+    title: 'Not Found | Сторінку не знайдено',
+    description: 'Error 404 | Сторінки не існує або вона була видалена.',
+    url: 'https://08-zustand-beta-brown.vercel.app/not-found',
     images: [
       {
         url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
