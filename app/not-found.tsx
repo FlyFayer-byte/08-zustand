@@ -3,11 +3,11 @@ import css from './not-found.module.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Not Found | Сторінку не знайдено',
-  description: 'Error 404 | Сторінки не існує або вона була видалена.',
+  title: '404 - Page not found',
+  description: 'Sorry, the page you are looking for does not exist.',
   openGraph: {
-    title: 'Not Found | Сторінку не знайдено',
-    description: 'Error 404 | Сторінки не існує або вона була видалена.',
+    title: '404 - Page not found',
+    description: 'Sorry, the page you are looking for does not exist.',
     url: 'https://08-zustand-beta-brown.vercel.app/not-found',
     images: [
       {
