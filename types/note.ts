@@ -21,7 +21,7 @@ export type AddNote = Omit<Note, 'id'| 'createdAt' | 'updatedAt'>;
 
 export type MetadataProps = {
   params: {
-    id: string;
+    // id: string;
     slug?: string[];
   };
 };

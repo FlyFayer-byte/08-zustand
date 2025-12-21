@@ -4,19 +4,22 @@ import NotesClient from './Notes.client';
 import type { Metadata } from 'next';
 
 import type { MetadataProps } from '@/types/note';
+// interface PageProps {
+//   params: { slug?: string[] };
+// }
 
 export async function generateMetadata({ params }:MetadataProps): Promise<Metadata> {
-  const filter = params.slug?.[0] ?? 'all';
+  const tag = params.slug?.[0] ?? 'all';
 
-  const formattedFilter = filter.charAt(0).toUpperCase() + filter.slice(1);
+  const formattedFilter = tag.charAt(0).toUpperCase() + tag.slice(1);
 
   return {
-    title: `${formattedFilter} notes | NoteHub`,
-    description: `Browse ${filter} notes in NoteHub. Filter and manage your notes by category.`,
+    title: `Notes with tag "${params.slug}" | NoteHub`,
+    description: `Browse ${params.slug} notes in NoteHub. Filter and manage your notes by category.`,
     openGraph: {
       title: `${formattedFilter} notes | NoteHub`,
-      description: `View and manage ${filter} notes in the NoteHub application.`,
-      url: `https://08-zustand-beta-brown.vercel.app/notes/filter/${filter}`,
+      description: `View and manage ${params.slug} notes in the NoteHub application.`,
+      url: `https://08-zustand-beta-brown.vercel.app/notes/filter/${params.slug}`,
       images: [
         {
           url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
