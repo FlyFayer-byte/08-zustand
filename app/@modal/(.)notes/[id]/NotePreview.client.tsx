@@ -21,7 +21,7 @@ export default function NotePreviewClient({ id }: { id: string }) {
     <Modal onClose={handleClose}>
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error loading note.</p>}
-      {data && <NoteDetailsClient note={data} />}
+      {data && <NoteDetailsClient noteId={data.id} />}
     </Modal>
   );
 }
