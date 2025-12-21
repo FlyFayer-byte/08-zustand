@@ -3,23 +3,24 @@ import { fetchNotes } from '@/lib/api';
 import NotesClient from './Notes.client';
 import type { Metadata } from 'next';
 
-import type { MetadataProps } from '@/types/note';
-// interface PageProps {
-//   params: { slug?: string[] };
-// }
+// import type { MetadataProps } from '@/types/note';
+type PageProps = {
+  params: Promise<{ slug: string[] | undefined}>;
+}
 
-export async function generateMetadata({ params }:MetadataProps): Promise<Metadata> {
-  const tag = params.slug?.[0] ?? 'all';
+export async function generateMetadata({ params }:PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const tag = resolvedParams.slug?.[0] ?? 'all';
 
   const formattedFilter = tag.charAt(0).toUpperCase() + tag.slice(1);
 
   return {
-    title: `Notes with tag "${params.slug}" | NoteHub`,
-    description: `Browse ${params.slug} notes in NoteHub. Filter and manage your notes by category.`,
+    title: `Notes with tag "${tag}" | NoteHub`,
+    description: `Browse ${tag} notes in NoteHub. Filter and manage your notes by category.`,
     openGraph: {
       title: `${formattedFilter} notes | NoteHub`,
-      description: `View and manage ${params.slug} notes in the NoteHub application.`,
-      url: `https://08-zustand-beta-brown.vercel.app/notes/filter/${params.slug}`,
+      description: `View and manage ${tag} notes in the NoteHub application.`,
+      url: `https://08-zustand-beta-brown.vercel.app/notes/filter/${tag}`,
       images: [
         {
           url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
