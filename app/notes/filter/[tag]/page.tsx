@@ -1,6 +1,24 @@
 import NotesClient from '@/app/notes/filter/[...slug]/Notes.client';
 // import { fetchNotes } from '@/lib/api';
 
+import type { Metadata } from 'next';
+
+interface PageProps {
+  params: { tag: string };
+}
+
+export function generateMetadata({ params }: PageProps): Metadata {
+  return {
+    title: `Notes with tag "${params.tag}" | NoteHub`,
+    description: `Filtered notes by tag: ${params.tag}`,
+    openGraph: {
+      title: `Notes with tag "${params.tag}" | NoteHub`,
+      description: `Browse notes filtered by tag: ${params.tag}`,
+    },
+  };
+}
+
+
 interface Props {
   params: Promise<{ tag: string }>;
 }
